@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Pagination, Button, Drawer } from "flowbite-react";
 import { Link } from "react-router-dom";
 import Carusel from "./Carousel";
-import CustomNavbar from "./navbar";
+import CustomNavbar from "./Navbar";
 const Country = ({ countryCode }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
