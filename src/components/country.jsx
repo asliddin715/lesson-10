@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Pagination, Button, Drawer } from "flowbite-react";
 import { Link } from "react-router-dom";
 import Carusel from "./Carousel";
-
+import CustomNavbar from "./navbar";
 const Country = ({ countryCode }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -60,6 +60,7 @@ const Country = ({ countryCode }) => {
 
     return (
         <div className="overflow-x-auto">
+            < CustomNavbar handleDrawerOpen={handleDrawerOpen}/>
             <Carusel countries={selectedRows} />
             <h1 className="text-center text-[40px] font-[600] mb-8">Davlatlar</h1>
             <Table>
@@ -104,9 +105,9 @@ const Country = ({ countryCode }) => {
             <div className="m-auto flex justify-center mb-10 mt-5">
                 <Pagination currentPage={currentPage} totalPages={Math.ceil(data.length / itemsPerPage)} onPageChange={onPageChange} />
             </div>
-            <div className="flex min-h-[50vh] items-center justify-center">
+            {/* <div className="flex min-h-[50vh] items-center justify-center">
                 <Button onClick={handleDrawerOpen}>Show drawer</Button>
-            </div>
+            </div> */}
             <Drawer open={isOpen} onClose={handleDrawerClose}>
                 <Drawer.Header title="Selected Countries" />
                 <Drawer.Items>
